@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="detail-container">
+    <!-- Gambar produk -->
+    <img src="https://www.volcom.com/cdn/shop/files/A1212307_DKA_F.jpg?v=1692738671" width="300">
+    <div class="product-info">
+      <h1>Celana Jogger</h1>
+      <p class="price">Rp200.000</p>
+      <p>Celana Jogger berkualitas tinggi. Nyaman untuk kegiatan sehari-hari dan bertaun" :v.</p>
+
+      <label for="ukuran">Pilih Ukuran:</label>
+      <select id="ukuran">
+        <option value="">Pilih Ukuran</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+
+      <button id="pilih-ukuran-btn">Pilih Ukuran</button>
+      <p id="pesan-ukuran" class="pesan-ukuran" style="display: none;"></p>
+    </div>
+  </div>
+
+  <!-- Tombol kembali -->
+  <a href="index.html">
+    <button style="margin-top: 20px; background-color: #28a745;">Kembali ke Beranda</button>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ukuranSelect = document.getElementById('ukuran');
+      const pesanUkuran = document.getElementById('pesan-ukuran');
+      const tombolPilih = document.getElementById('pilih-ukuran-btn');
+
+      tombolPilih.addEventListener('click', () => {
+        const ukuran = ukuranSelect.value;
+        if (ukuran) {
+          pesanUkuran.textContent = `Ukuran ${ukuran} telah dipilih`;
+          pesanUkuran.style.color = 'green';
+          pesanUkuran.style.display = 'block';
+        } else {
+          pesanUkuran.textContent = 'Silakan pilih ukuran terlebih dahulu!';
+          pesanUkuran.style.color = 'red';
+          pesanUkuran.style.display = 'block';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
